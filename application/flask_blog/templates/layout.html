@@ -18,16 +18,21 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if not session.logged_in %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/login">login</a>
+                    <a class="nav-link" href="{{url_for('show_entries')}}">login</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="/logout">logout</a>
+                    <a class="nav-link" href="{{url_for('logout')}}">logout</a>
                 </li>
                 {% endif %}
             </ul>
         </div>
     </nav>
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-info" role="alert">
+        {{ message }}
+    </div>
+    {% endfor %}
 
     <div class="blog-body">
         {% block body %}{% endblock %}
