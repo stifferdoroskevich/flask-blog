@@ -1,4 +1,4 @@
 venv/
-application/flask_blog/__pycache__/
 .vscode/settings.json
 *.db
+__pycache__
