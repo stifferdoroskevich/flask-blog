@@ -7,14 +7,14 @@ def show_entries():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
-    return render_template('/login.html')
-#  if request.method == 'POST':
-#        if request.form['username'] != app.config['USERNAME']:
-#            print("User name is different")
-#        elif request.form['password'] != app.config['PASSWORD']:
-#            print("Password is different")
-#        else:
-#            return render_template('login.html')
+    if request.method == 'POST':
+        if request.form['username'] != app.config['USERNAME']:
+            print("User name is different")
+        elif request.form['password'] != app.config['PASSWORD']:
+            print("Password is different")
+        else:
+            return redirect('/')
+    return render_template('login.html')
 
 
 @app.route('/logout')
