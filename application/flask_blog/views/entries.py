@@ -56,3 +56,14 @@ def update_entry(id):
     db.session.commit()
     flash('Article Updated.')
     return redirect(url_for('show_entries'))
+
+@app.route('/entries/<int:id>/delete', methods=['POST'])
+def delete_entry(id):
+    if not session.get('logged_in'):
+        return redirect(url_for('login'))
+    entry = Entry.query.get(id)
+    db.session.delete(entry)
+    db.session.commit()
+    flash('Article Deleted')
+    return redirect(url_for('show_entries'))
+        
