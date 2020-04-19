@@ -19,14 +19,14 @@
             <ul class="nav navbar-nav navbar-right">
                 {% if not session.logged_in %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('show_entries')}}">login</a>
+                    <a class="nav-link" href="{{url_for('view.login')}}">login</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('new_entry') }}">New Post</a>
+                    <a class="nav-link" href="{{ url_for('entry.new_entry') }}">New Post</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('logout')}}">logout</a>
+                    <a class="nav-link" href="{{url_for('view.logout')}}">logout</a>
                 </li>
                 {% endif %}
             </ul>
