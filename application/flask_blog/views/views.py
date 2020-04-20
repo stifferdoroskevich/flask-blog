@@ -17,7 +17,7 @@ def login():
     error = None
     if request.method == 'POST':
         if request.form['username'] != app.config['USERNAME']:
-            flash("User name is different")
+            flash("Username is different")
         elif request.form['password'] != app.config['PASSWORD']:
             flash("Password is different")
         else:
