@@ -1,12 +1,12 @@
-##Basic Blog
+## Basic Blog
 Using python framework Flask.
 
-Includes:\
+#### Includes:\
 *login screen with auth\
 *Creation of posts - update and delete\
 *Display the articles
 
-##INSTALL
+## INSTALL
 ```
 git clone https://github.com/stifferdoroskevich/flask-blog.git
 cd flask-blog
